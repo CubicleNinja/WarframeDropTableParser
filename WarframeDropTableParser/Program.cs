@@ -87,7 +87,13 @@ namespace WarframeDropTableParser
             if (indexPoint == null)
                 return;
 
-            var dropTableData = indexPoint.NextSibling;
+            while (dropTableData != null && dropTableData.NodeType != HtmlNodeType.Element)
+            {
+                dropTableData = dropTableData.NextSibling;
+            }
+            if (dropTableData == null)
+                return;
+            
             var dropTableRows = dropTableData.SelectNodes("tr");
 
             if (dropTableRows == null)
@@ -153,7 +159,13 @@ namespace WarframeDropTableParser
             if (indexPoint == null)
                 return;
 
-            var dropTableData = indexPoint.NextSibling;
+            while (dropTableData != null && dropTableData.NodeType != HtmlNodeType.Element)
+            {
+                dropTableData = dropTableData.NextSibling;
+            }
+            if (dropTableData == null)
+                return;
+            
             var dropTableRows = dropTableData.SelectNodes("tr");
 
             if (dropTableRows == null)
