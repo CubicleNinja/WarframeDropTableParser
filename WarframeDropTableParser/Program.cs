@@ -19,7 +19,7 @@ namespace WarframeDropTableParser
 
         static void Main(string[] args)
         {
-            Uri apiURI = new Uri("https://n8k6e2y6.ssl.hwcdn.net/repos/hnfvc0o3jnfvc873njb03enrf56.html");
+            Uri apiURI = new Uri($"https://n8k6e2y6.ssl.hwcdn.net/repos/hnfvc0o3jnfvc873njb03enrf56.html?ver={Guid.NewGuid()}");
             using (HttpClient client = new HttpClient())
             {
                 var response = client.GetAsync(apiURI).Result;
